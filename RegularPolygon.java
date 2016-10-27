@@ -49,7 +49,7 @@ class RegularPolygon{
 		return parameter;
 	}
 	public double getArea(){
-		double area= (n*(side*side))/ 4* (Math.tan(Math.PI/n));
+		double area= (n*(side*side))/ (4*(Math.tan(Math.PI/n)));
 		return area;
 	}
 }
