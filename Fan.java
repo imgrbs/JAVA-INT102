@@ -36,8 +36,8 @@ class Fan{
 	}
 	public String toString(){
 		return 	"Speed = " + speed + 
-				"\nFan = " + on + 
-				"\nRadius = " + radius + 
-				"\nFan Color = " + color;
+		"\nFan = " + on + 
+		"\nRadius = " + radius + 
+		"\nFan Color = " + color;
 	}
 }
