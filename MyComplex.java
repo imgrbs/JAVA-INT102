@@ -41,22 +41,27 @@ class MyComplex{
 		return this.real==mc.getReal()&&this.image==mc.getImage();
 	}
 	public MyComplex add(MyComplex mc){
-		this.real+=real;
-		this.image+=image;
-		return this;
+		MyComplex my = new MyComplex();
+		my.setReal(this.real+mc.getReal());
+		my.setImage(this.image+mc.getImage());
+		return my;
 	}
 	public MyComplex substract(MyComplex mc){
-		this.real-=real;
-		this.image-=image;
-		return this;
+		MyComplex my = new MyComplex();
+		my.setReal(this.real-mc.getReal());
+		my.setImage(this.image-mc.getImage());
+		return my;
 	}
 	public MyComplex multiply(MyComplex mc){
-		this.real=this.real*mc.getReal()+(this.image*mc.getImage()*-1);
-		return this;
+		MyComplex my = new MyComplex();
+		my.setReal((this.real*mc.getReal())-(this.image*mc.getImage()));
+		my.setImage((this.real*mc.getImage())+(this.image*mc.getReal()));
+		return my;
+		
 	}
-	public MyComplex comjugate(MyComplex mc){
-		this.image*=-1;
-		return this;
+	public MyComplex conjugate(MyComplex mc){
+		MyComplex my = new MyComplex(this.real,-this.getImage());
+		return my;
 	}
 	public static void main(String[] args){
 		MyComplex a = new MyComplex(1,1);
@@ -66,6 +71,10 @@ class MyComplex{
 		System.out.println(b.equals(6,5));
 		System.out.println(a.toString());
 		System.out.println(b.toString());
+		System.out.println(a.add(b));
+		System.out.println(a.substract(b));
+		System.out.println(a.multiply(b));
+		System.out.println(a.conjugate(b));
 	}
 	
 }
