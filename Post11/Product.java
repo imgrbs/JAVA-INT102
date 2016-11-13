@@ -38,4 +38,9 @@ class Product{
 	public String getDetail(){
 		return detail;
 	}
+	public String toString(){
+		return "ID : "+id+
+			   "\nName : "+name+
+			   "\nDetail : "+detail;
+	}
 }

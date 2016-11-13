@@ -5,7 +5,7 @@ class Pen{
 	private double price;
 	private static double VAT = 0.07;
 	private static int count;
-	private static String print;
+	private static String print="";
 	
 	public Pen(){
 		this(0);
@@ -25,7 +25,7 @@ class Pen{
 		this.brand=brand;
 		this.price=price;
 		count++;
-		print = print+"Pen id "+id+" model "+model+" "+brand+" "+price+"\n";
+		print=print+"\nPen "+productId+" model "+model+" "+brand+" "+price;
 	}
 	
 	public static int numberOfPen(){
