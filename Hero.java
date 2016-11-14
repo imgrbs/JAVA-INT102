@@ -33,7 +33,7 @@ class Hero{
 		return (this.hp+this.def)-mon.getAtk();
 	}
 	public int attack(Hero mon){
-		return (mon.getHp()+mon.getDef())-this.atk();
+		return (mon.getHp()+mon.getDef())-this.atk;
 	}
 	public int heal(int regen){
 		this.hp+=regen;
@@ -49,5 +49,27 @@ class Hero{
 		return h;
 	}
 	public static void main(String[] args){
+		Hero h = new Hero(100,350,90);
+		System.out.println("Hp Hero : "+h.getHp());
+		System.out.println("Atk Hero : "+h.getAtk());
+		System.out.println("Def Hero : "+h.getDef());
+		System.out.println("------------------------");
+		Hero mon = new Hero(50,200,150);
+		System.out.println("Hp Monster : "+mon.getHp());
+		System.out.println("Atk Monster : "+mon.getAtk());
+		System.out.println("Def Monster : "+mon.getDef());
+		System.out.println("------------------------");
+		System.out.println("Hero Attack Monster : "+h.attack(mon));
+		mon.dead();
+		System.out.println("Hero Hurt : "+mon.hurt(h));
+		h.dead();
+		System.out.println("------------------------");
+		System.out.println("Hero Hp : "+h.getHp());
+		System.out.println("Hero Dead!");
+		System.out.println("Hp Monster : "+mon.getHp()+"\nMonster Dead!");
+		System.out.println("------------------------");
+		System.out.println("Hp Hero Regen : "+h.heal(300)+"\nHp Hero : "+h.getHp());
+		System.out.println("Hp Monster Regen : "+mon.heal(50)+"\nHp Monster : "+mon.getHp());
+		
 	}
 }
